@@ -4,7 +4,7 @@ const  Home = () => {
 return(
     <SafeAreaView>
         <Text className='flex bottom-1'>
-            Hay
+            helllo
         </Text>
     </SafeAreaView>
 )

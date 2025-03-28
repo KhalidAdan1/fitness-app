@@ -1,3 +1,4 @@
+import { SafeAreaView , Text } from "react-native"
 
 const Profile = () => {
 return(

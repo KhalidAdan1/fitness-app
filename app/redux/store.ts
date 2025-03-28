@@ -13,8 +13,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import authReducer from './authSlice';
 
-
-const persistConfig = {
+export const persistConfig = {
   key: 'root',
   version: 1,
   storage: AsyncStorage,
@@ -22,13 +21,13 @@ const persistConfig = {
 };
 
 // Combine reducers
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
   auth: authReducer
   // Add other reducers here as you expand the app
 });
 
 // Create persisted reducer
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+export const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 // Create store
 export const store = configureStore({
@@ -47,3 +46,6 @@ export const persistor = persistStore(store);
 // Types for TypeScript support
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
+
+// Add default export
+export default store;
