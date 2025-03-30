@@ -1,11 +1,21 @@
-import { View , Text } from "react-native"
+import "nativewind";
+import { Href, Redirect, useNavigation } from "expo-router";
+import React from "react";
+import { View , Text } from "react-native";
 
-const hi = () => {
+
+const Home = () => {
+
+ const navigation = useNavigation();
+ navigation.navigate('/welcome');
+
  return (
-    <View>
-        <Text>HI</Text>
-    
-    </View>
- )   
-} 
-export default hi
+   <View>
+   
+     <Text>Welcome Back!</Text>
+   </View>
+ );
+  
+};
+
+export default Home;
