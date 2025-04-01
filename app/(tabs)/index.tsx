@@ -1,10 +1,18 @@
-import "nativewind";
-import { Redirect } from "expo-router";
-import React from "react";
+import { router, useLocalSearchParams } from "expo-router";
+import { SafeAreaView, Text, TouchableOpacity } from "react-native"
 
 const Home = () => {
-  // Use Redirect component instead of programmatic navigation
-  return <Redirect href="/(auth)/welcome" />;
-};
+  const { userName } = useLocalSearchParams();
+    return (
+      <SafeAreaView className="flex  items-center flex-1">
+        {userName ? (
+          <Text>Welcome back {userName}</Text>
+        ): (
+          <Text>Welcome back Guest</Text>
+        )}
 
-export default Home;
+      </SafeAreaView>
+    );
+  };
+
+export default Home

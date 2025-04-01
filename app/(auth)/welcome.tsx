@@ -4,8 +4,6 @@ import { SafeAreaView, View, TouchableOpacity, Text } from "react-native";
 import 'nativewind';
 const Welcome = () => {
   useEffect(() => {
-    // If you need to hide header, do it here
-    // But with Expo Router, you might want to do this in the layout file instead
   }, []);
 
   return (
