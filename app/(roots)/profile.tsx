@@ -6,7 +6,7 @@ import React from 'react';
 export default function Profile() {
   const { userName , Email } = useLocalSearchParams(); 
  
-  const user = {
+ const user = {
     name: userName || 'John',
     email: Email ||'alex@example.com',
     joinDate: 'Joined March 2024',

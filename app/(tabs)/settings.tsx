@@ -1,24 +1,38 @@
-import { router } from "expo-router"
-import { Text, TouchableOpacity } from "react-native"
+import { router, useLocalSearchParams } from "expo-router"
+import { Pressable, Text, TouchableOpacity } from "react-native"
 import { View } from "react-native"
 import { SafeAreaView } from "react-native-safe-area-context"
 
 const Settings = () => {
+    const { userName , Email } = useLocalSearchParams(); 
 return(
     <SafeAreaView >
+         <View className="items-center mb-8">
+                <Text className="text-2xl font-bold text-gray-900">{userName}</Text>
+                <Text className="text-gray-500">{Email}</Text>
+              </View>
+        
         <View>
             <ActionButton 
             label='Prefered units'
             onPress ={()=> {
-                router.push('/(roots)/preferred-units')
+                router.push('../(roots)/preferred-units')
             }}
             />
+           <Pressable 
+    className="py-3 border-b border-gray-200 dark:border-gray-700"
+      onPress={() => router.push('../(roots)/help')}
+>
+  <Text className="text-gray-900 dark:text-white">
+    Help & Support
+  </Text>
+</Pressable>
         </View>
     </SafeAreaView>
 )
 
 }
-const ActionButton = ({ icon, label, onPress }: any) => (
+const ActionButton = ({ label, onPress }: any) => (
     <TouchableOpacity 
       className={`flex-row items-center p-4 bg-white rounded-lg border border-gray-100`}
       onPress={onPress}
