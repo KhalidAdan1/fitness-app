@@ -22,7 +22,7 @@ const SignUp = () => {
     // On successful signup:
     router.push({
       pathname: '/(tabs)',  
-      params: { userName: name },
+      params: { userName: name , Email : email },
     });
   };
 

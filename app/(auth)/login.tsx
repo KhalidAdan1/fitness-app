@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native';
-import { router } from 'expo-router';
+import { router, usePathname } from 'expo-router';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -16,7 +16,6 @@ const Login = () => {
     setLoading(true);
 
     try {
-      // Simulate API call
       await new Promise<void>((resolve, reject) => {
         setTimeout(() => {
           
@@ -25,7 +24,11 @@ const Login = () => {
         }, 1500);
       });
 
-      router.replace('/(tabs)/home');
+      router.push({
+        pathname:'/(tabs)',
+        params:{ Email : email}
+      }
+      );
       
     } catch (error:any) {
       Alert.alert('Error', error.message);
