@@ -4,7 +4,7 @@ import { Pressable, SafeAreaView , Text} from 'react-native';
 
 export default function NotFound() {
   return (
-    <SafeAreaView className='flex items-center justify-center font-medium'>
+    <SafeAreaView className='flex font-medium'>
        <Pressable onPress={() => router.back()}>
                 <Ionicons 
                   name="arrow-back" 
@@ -12,8 +12,8 @@ export default function NotFound() {
                   className="text-gray-900 dark:text-white"
                 />
               </Pressable> 
-        <Text>
-          This page isn't found {'/n'}
+        <Text className='flex items-center justify-center'>
+          This page isn't found {'/n'}  Please go back
         </Text>
     </SafeAreaView>
   )
