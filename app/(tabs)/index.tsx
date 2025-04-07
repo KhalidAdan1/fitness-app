@@ -1,6 +1,7 @@
 import { Ionicons } from "@expo/vector-icons";
 import { router, useLocalSearchParams } from "expo-router";
-import { Pressable, SafeAreaView, ScrollView, Text, TouchableOpacity, View } from "react-native"
+import { platformSelect } from "nativewind";
+import { Platform, Pressable, SafeAreaView, ScrollView, Text, TouchableOpacity, View } from "react-native"
 
 
 const workoutData = [
@@ -11,10 +12,18 @@ const workoutData = [
 
 const Home = () => {
   const { userName } = useLocalSearchParams();
+  const Fonts = () =>{
+      return  Platform.select({
+  ios:"font-300",
+  android:"bold"
+})
+  }
+
     return (
       <SafeAreaView className="flex  items-center flex-1">
+        
         {userName ? (
-          <Text>Welcome back {userName}</Text>
+          <Text className={Fonts()}>Welcome back {userName}</Text>
         ): (
           <Text>Welcome back Guest</Text>
         )}

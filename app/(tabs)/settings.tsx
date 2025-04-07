@@ -2,6 +2,7 @@ import { router, useLocalSearchParams } from "expo-router"
 import { Pressable, Text, TouchableOpacity } from "react-native"
 import { View } from "react-native"
 import { SafeAreaView } from "react-native-safe-area-context"
+import styles from "../styles/styles"
 
 const Settings = () => {
     const { userName , Email } = useLocalSearchParams(); 
@@ -27,6 +28,11 @@ return(
     Help & Support
   </Text>
 </Pressable>
+<TouchableOpacity>
+  <Text className={`${styles.button}`}>
+    hello
+  </Text>
+</TouchableOpacity>
         </View>
     </SafeAreaView>
 )

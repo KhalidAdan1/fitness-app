@@ -2,6 +2,7 @@ import { View, Text, Image, TouchableOpacity, SafeAreaView } from 'react-native'
 import { useLocalSearchParams, router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import React from 'react';
+import styles from'../styles/styles';
 
 export default function Profile() {
   const { userName , Email } = useLocalSearchParams(); 
@@ -18,7 +19,7 @@ export default function Profile() {
 
     <SafeAreaView className="flex-1 bg-gray-50 p-6">
       <View className="items-center mb-8">
-        <Text className="text-2xl font-bold text-gray-900">{user.name}</Text>
+        <Text className={`${styles.container}`}>{user.name}</Text>
         <Text className="text-gray-500">{user.email}</Text>
       </View>
 
@@ -38,6 +39,7 @@ export default function Profile() {
         <ActionButton 
           icon="settings" 
           label="Account Settings" 
+          className={`${styles.button}`}
           onPress={() => router.push('/settings')}
           />
         <ActionButton 
