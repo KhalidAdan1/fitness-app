@@ -1,5 +1,5 @@
 import { router, useLocalSearchParams } from "expo-router"
-import { Pressable, Text, TouchableOpacity } from "react-native"
+import { Button, Pressable, Text, TouchableOpacity } from "react-native"
 import { View } from "react-native"
 import { SafeAreaView } from "react-native-safe-area-context"
 import styles from "../styles/styles"
@@ -16,9 +16,6 @@ return(
         <View>
             <ActionButton 
             label='Prefered units'
-            onPress ={()=> {
-                router.push('../(roots)/preferred-units')
-            }}
             />
            <Pressable 
     className="py-3 border-b border-gray-200 dark:border-gray-700"
@@ -28,11 +25,11 @@ return(
     Help & Support
   </Text>
 </Pressable>
-<TouchableOpacity>
-  <Text className={`${styles.button}`}>
-    hello
+<Pressable style={styles.button}>
+  <Text style={styles.buttonText}>
+    Hello
   </Text>
-</TouchableOpacity>
+</Pressable>
         </View>
     </SafeAreaView>
 )
@@ -55,11 +52,10 @@ export default Settings
 /*
 what i want in my settings  
  Preferred units (metric/imperial)
-
-Language selection
-
-About & Legal
-Version info
-Terms of service
-Privacy policy links
-*/
+ Language selection
+ 
+ About & Legal
+ Version info
+ Terms of service
+ Privacy policy links
+ */

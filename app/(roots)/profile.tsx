@@ -15,8 +15,6 @@ export default function Profile() {
   };
 
   return (
-
-
     <SafeAreaView className="flex-1 bg-gray-50 p-6">
       <View className="items-center mb-8">
         <Text className={`${styles.container}`}>{user.name}</Text>
@@ -66,7 +64,7 @@ export default function Profile() {
 
  const ActionButton = ({ icon, label, onPress, color = 'gray' }: any) => (
   <TouchableOpacity 
-    className={`flex-row items-center p-4 bg-white rounded-lg border border-${color}-100`}
+    className={`flex-row items-center p-4 ${styles.button} rounded-lg border `}
     onPress={onPress}
   >
     <Ionicons 

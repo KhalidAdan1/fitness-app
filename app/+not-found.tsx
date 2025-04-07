@@ -13,7 +13,8 @@ export default function NotFound() {
                 />
               </Pressable> 
         <Text className='flex items-center justify-center'>
-          This page isn't found {'/n'}  Please go back
+          This page isn't found {`\n`}
+           Please go back
         </Text>
     </SafeAreaView>
   )

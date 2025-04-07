@@ -25,15 +25,15 @@ const styles = StyleSheet.create({
   button: {
     padding: 10,
     backgroundColor: Platform.select({
-      ios: 'bg-blue-400',
+      ios: 'blue',
       android: 'bg-blue-gray',
-      default: 'bg-red-400',
+      default: 'red',
     }),
     borderRadius: 5,
   },
   buttonText: {
-    fontSize: 18,
-    color: 'white',
+    fontSize: 20,
+    color: 'red',
     textAlign: 'center',
   },
 });
